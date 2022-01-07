@@ -31,7 +31,8 @@ def bal(A,verbose=False):
         else:
             if verbose:
                 print("not symmetric, so balanced via swap")
-        print("balancing index =",b)
+            if verbose:
+                print("balancing index =",b)
         return b
     if n==3:
         print("not yet ready")
