@@ -11,6 +11,8 @@ def isTernaryTriple(a):
         if mods==[0,1,2]:
             return True
         return False
+def matPerm(A,p):
+    return matrix(A.nrows(),A.ncols(),lambda i,j:A[p[i],p[j]])
 # off-diagonal line sums
 def rowdegs(A):
     n=A.nrows()    
