@@ -84,7 +84,7 @@ def tilde(A,r):
     perms=Permutations(range(n))
     L=(1-n)*A+sum(matPerm(A,mypermFromCycle(n,[r,j])) for j in range(n))
     return matPerm(L,mypermFromCycle(n,[0,r]))
-def balance(A,verbose=False):
+def bal(A,verbose=False):
     A=matrix(A)
     n=A.nrows()
     if verbose:
