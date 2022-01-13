@@ -43,7 +43,7 @@ def countMinTriangles(A):
                     thiscycweight=(A[h,i]+A[i,j]+A[j,h])-(A[i,h]+A[h,j]+A[j,i])
                     if val2.is_equivalent(t,thiscycweight):
                         ans[h]+=1
-    return ans
+    return [x%2 for x in ans]
 # Four-cycle analysis
 def box(A,p):
     n=A.nrows()
