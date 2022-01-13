@@ -155,12 +155,18 @@ def bal(A,verbose=False):
             print("diagonal:",diagonal)
             print("off-diagonal row sums:",rd)
             print("off-diagonal col sums:",cd)
+            print("primitivity lattice generators:",bop)
+            print("parity vector of bad triples:",mt)
         local_lat_basis=[vector([1,rd[i],cd[i],mt[i],la[i],lb[i],diagonal[i]]) for i in range(n)]+[vector([0,0,0,2,0,0,0])]+[vector([0,0,0,0,u[0],u[1],0]) for u in bop]
         m=matrix(ZZ,local_lat_basis)
         Lambda=IntegerLattice(m)
         testvector=vector([1,ee/n,ee/n,0,ee/n/(n-1),ee/n/(n-1),p/n])
+        div_b=0
         for b in range(1,factorial(n)+1):
             if factorial(n)%b==0:
+                if verbose and div_b==0 and b*ee/n/(n-1) in ZZ and b*p/n in ZZ:
+                    div_b=b
+                    print("obvious lower bound:",div_b) 
                 if b*testvector in Lambda:
                     if verbose:
                         print("balancing index =",b)
