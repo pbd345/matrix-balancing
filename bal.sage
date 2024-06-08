@@ -148,8 +148,8 @@ def bal(A,verbose=False):
         cd=coldegs(A)
         ee=sum(rd)
         mt=countMinTriangles(A)
-        la=[tilde(A,i)[0,1] for i in range(n)]
-        lb=[tilde(A,i)[1,0] for i in range(n)]
+        la=[tilde(A,i)[1,2] for i in range(n)]
+        lb=[tilde(A,i)[2,1] for i in range(n)]
         bop=basisOfPrimitivity(A)
         if verbose:
             print("diagonal:",diagonal)
